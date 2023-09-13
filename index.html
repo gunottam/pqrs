@@ -4,62 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gunottam Maini - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 36px;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Gunottam Maini</h1>
         <p>B.Tech in Computer Science and Engineering</p>
     </header>
-    <section>
-        <h2>About Me</h2>
-        <p>Hi, I'm Gunottam Maini. I have a keen interest in cricket, coding, and playing the flute. I was the captain of the school cricket team, which has honed my leadership skills and teamwork.</p>
+    <section class="container">
+        <div class="left">
+            <h2>About Me</h2>
+            <p>Hi, I'm Gunottam Maini. I have a keen interest in cricket, coding, and playing the flute. I was the captain of the school cricket team, which has honed my leadership skills and teamwork.</p>
 
-        <h2>Experience</h2>
-        <ul>
-            <li>Captain of the School Cricket Team</li>
-        </ul>
+            <h2>Experience</h2>
+            <ul>
+                <li>Captain of the School Cricket Team</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Portfolio</h2>
+            <div class="project">
+                <h3>Web Development Project</h3>
+                <p>A website I developed using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project">
+                <h3>Cricket Tournament</h3>
+                <p>Organized and participated in a local cricket tournament.</p>
+            </div>
+        </div>
     </section>
+    <footer>
+        <p>Contact me at: gunottam@example.com</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
