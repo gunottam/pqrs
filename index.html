@@ -3,30 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Gradient Website</title>
+    <title>Date Askout</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #FF7E5F, #feb47b); /* Replace these colors with your desired gradient */
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff; /* Text color on the gradient background */
+            overflow: hidden;
+            background: url('https://img.freepik.com/premium-vector/cute-teddy-bear-choco-seamless-pattern-kawaii-wallpaper_513640-1961.jpg?w=740') fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        h1 {
-            font-size: 3em;
-            text-align: center;
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #bear {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('https://i.imgur.com/6C1Zne3.png') no-repeat center center;
+            background-size: cover;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Your Website Content Goes Here</h1>
-        <!-- Add more content as needed -->
+    <div id="container">
+        <div id="bear"></div>
+        <div id="buttons">
+            <button onclick="handleYes()">Yes</button>
+            <button onclick="handleNo()">No</button>
+        </div>
     </div>
+
+    <script>
+        function handleYes() {
+            alert("Great! Let's go on a date!");
+        }
+
+        function handleNo() {
+            var bear = document.getElementById('bear');
+            bear.style.transform = 'translate(' + Math.random() * 100 + 'vw, ' + Math.random() * 100 + 'vh)';
+        }
+
+        document.addEventListener('mousemove', function (e) {
+            var bear = document.getElementById('bear');
+            bear.style.left = e.pageX + 'px';
+            bear.style.top = e.pageY + 'px';
+        });
+    </script>
 </body>
 </html>
