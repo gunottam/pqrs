@@ -25,68 +25,76 @@
         }
 
         #text {
-            font-size: 24px;
+            font-size: 36px;
+            font-weight: bold;
             text-align: center;
-            color: #fff;
+            color: plum    ; /* Pink color */
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: floatingText 2s ease-in-out infinite;
         }
 
-        #bear {
+        @keyframes floatingText {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .button-span {
             position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('https://i.imgur.com/6C1Zne3.png') no-repeat center center;
-            background-size: cover;
+            bottom: 150px; /* Adjusted position above the bottom */
+            padding: 20px 40px;
+            font-size: 20px;
             cursor: pointer;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        #buttons {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-        }
-
-        button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
             border: none;
             border-radius: 5px;
+            transition: transform 0.1s ease-in-out; /* Faster transition */
+        }
+
+        #yesButton {
+            left: calc(50% - 100px); /* Adjusted left position */
+            background-color: #4CAF50; /* Crimson color */
+            color: white;
+        }
+
+        #noButton {
+            left: calc(50% + 40px); /* Adjusted left position */
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div id="container">
         <div id="text">Would you like to go on a date with me?</div>
-        <div id="bear"></div>
-        <div id="buttons">
-            <button onclick="handleYes()">Yes</button>
-            <button onclick="handleNo()">No</button>
-        </div>
+        <span id="noButton" class="button-span" onclick="handleNo()">No</span>
+        <span id="yesButton" class="button-span" onclick="handleYes()">Yes</span>
     </div>
 
     <script>
+        var initialPosition = true;
+
         function handleYes() {
             alert("Great! Let's go on a date!");
         }
 
         function handleNo() {
-            var bear = document.getElementById('bear');
-            bear.style.transform = 'translate(' + Math.random() * 100 + 'vw, ' + Math.random() * 100 + 'vh)';
-        }
+    var noButton = document.getElementById('noButton');
 
-        document.addEventListener('mousemove', function (e) {
-            var bear = document.getElementById('bear');
-            bear.style.left = e.pageX + 'px';
-            bear.style.top = e.pageY + 'px';
-        });
+    if (initialPosition) {
+        var rand = (Math.random() * 300) + (75);
+        // Move to the second position (just below the top line)
+        noButton.style.transform = `translateY(${-rand}px)`;
+    } else {
+        // Move back to the initial position
+        noButton.style.transform = 'translateY(0)';
+    }
+
+    initialPosition = !initialPosition;
+}
     </script>
 </body>
 </html>
