@@ -11,12 +11,25 @@
             background: url('https://img.freepik.com/premium-vector/cute-teddy-bear-choco-seamless-pattern-kawaii-wallpaper_513640-1961.jpg?w=740') fixed;
             background-size: cover;
             background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         #container {
             position: relative;
             width: 100vw;
             height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #text {
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         #bear {
@@ -51,6 +64,7 @@
 </head>
 <body>
     <div id="container">
+        <div id="text">Would you like to go on a date with me?</div>
         <div id="bear"></div>
         <div id="buttons">
             <button onclick="handleYes()">Yes</button>
